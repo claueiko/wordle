@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle by Claudia Eiko</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+<nav>
+            <!--POP-UP-->
+            <div class="popup-overlay">
+            <!--Creates the popup content-->
+             <div class="popup-content">
+                 <h2>How to play</h2>
+                 <p> You have 6 tries to guess the WORDLE.<br>
+                    Each guess must be a valid 5-letter word.<br>
+                    You'll be using your keyboard. Hit the ENTER button to submit. <br>
+                    After each guess, the color of the titles will change to show how close your guess was to the word.</p>
+            <!--popup's close button-->
+                <button class="close">X</button> 
+            </div>
+            </div>
+            <!--Content shown when popup is not displayed-->
+            <button class="open">?</button>
+    <h1 class="title">WORDLE</h1>
+</nav>
+
+<div class="main">
+    <div class="first-row row">
+        <div class="letter">A</div>
+        <div class="letter">L</div>
+        <div class="letter">I</div>
+        <div class="letter">G</div>
+        <div class="letter">N</div>
+    </div>
+      <div class="first-row row">
+        <div class="letter"></div>
+        <div class="letter"></div>
+        <div class="letter"></div>
+        <div class="letter"></div>
+        <div class="letter"></div>
+    </div>
+      <div class="first-row row">
+        <div class="letter"></div>
+        <div class="letter"></div>
+        <div class="letter"></div>
+        <div class="letter"></div>
+        <div class="letter"></div>
+    </div>
+      <div class="first-row row">
+        <div class="letter"></div>
+        <div class="letter"></div>
+        <div class="letter"></div>
+        <div class="letter"></div>
+        <div class="letter"></div>
+    </div>
+      <div class="first-row row">
+        <div class="letter"></div>
+        <div class="letter"></div>
+        <div class="letter"></div>
+        <div class="letter"></div>
+        <div class="letter"></div>
+    </div>
+      <div class="first-row row">
+        <div class="letter"></div>
+        <div class="letter"></div>
+        <div class="letter"></div>
+        <div class="letter"></div>
+        <div class="letter"></div>
+    </div>
+      
+</div>
+<div class="keyboard">
+<div class="key-row">
+    <div class="key">Q</div>
+    <div class="key">W</div>
+    <div class="key">E</div>
+    <div class="key">R</div>
+    <div class="key">T</div>
+    <div class="key">Y</div>
+    <div class="key">U</div>
+    <div class="key">I</div>
+    <div class="key">O</div>
+    <div class="key">P</div>
+</div>
+<div class="key-row">
+    <div class="key">A</div>
+    <div class="key">S</div>
+    <div class="key">D</div>
+    <div class="key">F</div>
+    <div class="key">G</div>
+    <div class="key">H</div>
+    <div class="key">J</div>
+    <div class="key">K</div>
+    <div class="key">L</div>
+    
+</div>
+<div class="key-row">
+    <div class="key" id="enter">ENTER</div>
+    <div class="key">Z</div>
+    <div class="key">X</div>
+    <div class="key">C</div>
+    <div class="key">V</div>
+    <div class="key">B</div>
+    <div class="key">N</div>
+    <div class="key">M</div>
+    <div class="key" id="back"> BACK </div>
+</div>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="app.js"></script>
+</body>
+</html>
