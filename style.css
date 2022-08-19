@@ -2,6 +2,7 @@
 html {
   font-family: 'Poppins', sans-serif;
   width: 100%;
+  height: 100%;
   color: #666666;
   text-align: center;
 }
@@ -70,7 +71,6 @@ input:focus {
 }
 .keyboard{
     width: 600px;
-    height: 300px;
     margin: 20px auto;
 }
 .key-row {
@@ -110,6 +110,7 @@ input:focus {
   /*displays pop-up when "active" class is present*/
   visibility: visible;
   text-align:left;
+  height: 400px;
  
 }
 
@@ -117,8 +118,9 @@ input:focus {
   /*Hides pop-up content when there is no "active" class */
   visibility: hidden;
   color: rgb(0, 0, 0);
-  padding: 20px;
+  padding: 20px 40px;
   line-height: 1.5;
+  
 }
 
 .popup-content.active {
@@ -126,7 +128,7 @@ input:focus {
   visibility: visible;
 }
 
-button {
+.open {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -140,8 +142,139 @@ button {
   padding: 10px;
 }
 
-button:hover {
+.open:hover {
   border: 1px solid #ffffff;
   background: #ffffff;
   color: rgba(48,20,99,1);
+}
+.close {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  float: right;
+  border-radius: 5px;
+  margin: 40px;
+  font-size: 20px;
+  color: white;
+  background: #0f0232;
+  border: 1px solid #ffffff;
+  padding: 10px;
+  z-index: 1;
+}
+
+.endgame-overlay {
+  /*Hides pop-up when there is no "active" class*/
+  visibility: hidden;
+  position: absolute;
+  top: 30%;
+  left: 25%;
+  background: #ffffff;
+  border-radius: 10px;
+  width: 50%;
+  
+}
+.lost-overlay {
+  /*Hides pop-up when there is no "active" class*/
+  visibility: hidden;
+  position: absolute;
+  top: 30%;
+  left: 25%;
+  background: #ffffff;
+  border-radius: 10px;
+  width: 50%; 
+}
+
+.endgame-overlay.active {
+  /*displays pop-up when "active" class is present*/
+  visibility: visible;
+  text-align:left;
+  height: 400px;
+}
+.lost-overlay.active {
+  /*displays pop-up when "active" class is present*/
+  visibility: visible;
+  text-align:left;
+  height: 400px;
+}
+
+.endgame-content {
+  /*Hides pop-up content when there is no "active" class */
+  visibility: hidden;
+  color: rgb(0, 0, 0);
+  padding: 20px 40px;
+  line-height: 1.5;
+}
+.lost-content {
+  /*Hides pop-up content when there is no "active" class */
+  visibility: hidden;
+  color: rgb(0, 0, 0);
+  padding: 20px 40px;
+  line-height: 1.5;
+}
+
+.endgame-content.active{
+  /*Shows pop-up content when "active" class is present */
+  visibility: visible;
+}
+.lost-content.active{
+  visibility: visible;
+}
+.title-gameover{
+   background: -webkit-linear-gradient(0deg, rgba(34,193,195,1) 0%, #fd2df6 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    font-size: 75px;
+    line-height: 90px;
+    text-align: center;
+}
+.endgame-text {
+  font-size: 18px;
+  text-align: center;
+  margin-top: -55px;
+}
+.for-button{
+  text-align: center;
+}
+.restart-btn {
+  background-color: #0f0232;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 40px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+}
+.restart-btn:hover {
+  box-shadow: 0 0 7px #ce71c2;;
+}
+
+/* DIFFERENT SCREENS */
+
+@media  (max-width: 1280px) {
+ 
+.main {
+    width: 400px;
+    height: 480px;
+}
+.letter {
+    height: 70px;
+    width: 70px;
+    line-height: 100px;
+    font-size: 95px;
+    font-weight: 500;
+}
+.title {
+  font-size: 85px;
+}
+}
+@media (max-width: 1024px) {
+  body {
+    background: black;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    background: white;
+  }
 }

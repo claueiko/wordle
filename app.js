@@ -2,7 +2,36 @@
 const words = [
   'GREAT',
   'WORLD',
-  'STING'
+  'STING',
+  'GUIDE',
+  'HELPS',
+  'COURT',
+  'AUDIO',
+  'PILOT',
+  'PATIO',
+  'VOWEL',
+  'EQUAL',
+  'PRIME',
+  'MINUS',
+  'VALUE',
+  'DIGIT',
+  'SOLVE',
+  'RUSTY',
+  'TAILS',
+  'LEAST',
+  'ROAST',
+  'PLANE',
+  'DEALT',
+  'FRUIT',
+  'TRACK',
+  'ABOUT',
+  'DROPS',
+  'VAGUE',
+  'MEDAL',
+  'BREAD',
+  'JOINS',
+  'TIMES',
+  'GAMES'
 ]
 
 const tries = 6;
@@ -125,6 +154,8 @@ for (let i = 0; i < 5; i++) {
   if (guessLetter === rightLetter) {
     console.log("You got it!");
     remaining = 0;
+    setTimeout(endGame, 1800);
+   
     return;
   } else {
     remaining -= 1;
@@ -133,6 +164,7 @@ for (let i = 0; i < 5; i++) {
     
     if (remaining === 0) {
       console.log("Game over, you lost");
+      setTimeout(lostGame, 1800);
     }
   }
 }
@@ -228,3 +260,32 @@ $(".open").on("click", function () {
 $(".close, .popup-overlay").on("click", function () {
   $(".popup-overlay, .popup-content").removeClass("active");
 });
+
+function endGame() {
+  $(".endgame-overlay, .endgame-content").addClass("active");
+  // $(".close, .endgame-overlay").on("click", function () {
+  //   $(".endgame-overlay, .endgame-content").removeClass("active");
+  // });
+}
+function lostGame() {
+  $(".endgame-overlay, .lost-content").addClass("active");
+}
+
+  // $(".endgame-overlay, .endgame-content").removeClass("active");
+
+  $(".restart-btn").on("click", function () {
+    setTimeout(function () {
+      window.location.reload();
+    }, 100);
+    // location.reload(true);
+  });
+  // $("#restart-btn").click(function() {
+  //   location.reload(true);
+  // });
+
+
+
+
+// $(".restart-btn, endgame-overlay")on("click", function() {
+//   $(".endgame-overlay, .endgame-content").addClass("active");
+// })
