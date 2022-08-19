@@ -28,8 +28,6 @@ function movetoNext(current, nextFieldID) {
   
   $(".row").keyup(function (event) {
     let pressedKey = String(event.key);
-  
-
   if (pressedKey === "Backspace") {
     deleteLetter();
     console.log("You hit backspace");
@@ -39,21 +37,25 @@ function movetoNext(current, nextFieldID) {
       check();
     } else {
      //letter only doesn't console.log other keys but is still adding to box!
-     let letterOnly = pressedKey.match(/[a-z]/gi)
-     if (!letterOnly) {
-      pressedKey = "";
-      //  $("#" + box).text("");
-      console.log("not a string");
-     } else {
+    //  let letterOnly = pressedKey.match(/[a-z]/gi)
+    //  if (!letterOnly) {
+    //   pressedKey = "";
+    //   //  $("#" + box).text("");
+    //   console.log("not a string");
+    //  } else {
       addLetters(pressedKey);
-     }}}) ;
-  
-
+     }}) ;
   
 function addLetters(pressedKey) {
+  let letterOnly = pressedKey.match(/[a-z]/gi)
+
   if (nextLetter === 5) {
     return }
-  pressedKey = pressedKey.toUpperCase();
+    else if (!letterOnly) {
+      pressedKey = "";
+    };
+
+    pressedKey = pressedKey.toUpperCase();
   
    $("#" + box).each(function () {
    $(this).text(pressedKey);
@@ -61,6 +63,7 @@ function addLetters(pressedKey) {
    console.log(pressedKey);
    currentTry.push(pressedKey);
    nextLetter += 1;
+   
  })};
 
 
@@ -111,10 +114,13 @@ for (let i = 0; i < 5; i++) {
   }
    let delay = 250 * i;
    setTimeout(() => {
-     //shade box
+     //keyboard color
      border.style.backgroundColor = color;
-    //  shadeKeyBoard(letter, letterColor);
+     $("input").next("input").focus();
+     keyboardColor(letter, color);
    }, delay);
+
+  
 }
   if (guessLetter === rightLetter) {
     console.log("You got it!");
@@ -130,6 +136,32 @@ for (let i = 0; i < 5; i++) {
     }
   }
 }
+
+function keyboardColor(letter, color) {
+  let key = "";
+   $(".key").each(function() {
+    key = $(this).text();
+  if (key === letter) {
+  let oldColor = this.style.backgroundColor;
+  console.log(key + " KEYBOARD COLOR");
+  if (oldColor === "green") {
+    return;
+  }
+  if (oldColor === "yellow" && color !== "green") {
+    return;
+  }
+  this.style.backgroundColor = color;
+  return false;
+}
+   });
+    
+}
+
+
+    
+
+  
+
 
 
 // Function to move to next letter:

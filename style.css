@@ -37,6 +37,11 @@ input {
   /* cursor: none; */
   caret-color: transparent;
 }
+input:focus {
+    outline: none !important;
+    border:1px solid white;
+    box-shadow: 0 0 7px #ce71c2;
+  }
 .letter {
     height: 100px;
     width: 110px;
