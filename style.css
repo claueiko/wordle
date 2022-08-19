@@ -12,7 +12,9 @@ background: linear-gradient(90deg, rgb(19, 8, 40) 0%, rgb(37, 4, 87) 35%, rgba(2
 }
 
 .title {
-    color: white;
+     background: -webkit-linear-gradient(0deg, rgba(34,193,195,1) 0%, #fd2df6 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     font-size: 115px;
     margin-top: 20px;
 }
@@ -31,6 +33,10 @@ background: linear-gradient(90deg, rgb(19, 8, 40) 0%, rgb(37, 4, 87) 35%, rgba(2
     justify-content: space-between;
     margin-bottom: 10px;
 }
+input {
+  /* cursor: none; */
+  caret-color: transparent;
+}
 .letter {
     height: 100px;
     width: 110px;
@@ -41,7 +47,21 @@ background: linear-gradient(90deg, rgb(19, 8, 40) 0%, rgb(37, 4, 87) 35%, rgba(2
     font-size: 95px;
     color: white;
     font-weight: 500;
-
+    text-align: center;
+    text-transform: uppercase;
+}
+.green {
+    height: 100px;
+    width: 110px;
+    background-color: rgba(255, 255, 255, 0.009);
+    border-radius: 7px;
+    border: 1px solid white;
+    line-height: 100px;
+    font-size: 95px;
+    color: green;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
 }
 .keyboard{
     width: 600px;
