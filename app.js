@@ -132,12 +132,12 @@ for (let i = 0; i < 5; i++) {
     console.log(color);
   } else {
     if (letter === rightGuess[i]){
-      color = "green"
-      console.log(color);
+      color = "#57E292";
+      console.log("green");
       
     } else {
-      color = "yellow"
-      console.log(color);
+      color = "#FFD133";
+      console.log("yellow");
     }
     rightGuess[position] = "#";
   }
@@ -153,8 +153,10 @@ for (let i = 0; i < 5; i++) {
 }
   if (guessLetter === rightLetter) {
     console.log("You got it!");
+    setTimeout(function() {
+      $("#myVideo").css("display", "block");}, 1900);
     remaining = 0;
-    setTimeout(endGame, 1800);
+    setTimeout(endGame, 1900);
    
     return;
   } else {
@@ -164,7 +166,7 @@ for (let i = 0; i < 5; i++) {
     
     if (remaining === 0) {
       console.log("Game over, you lost");
-      setTimeout(lostGame, 1800);
+      setTimeout(lostGame, 1900);
     }
   }
 }
@@ -176,10 +178,10 @@ function keyboardColor(letter, color) {
   if (key === letter) {
   let oldColor = this.style.backgroundColor;
   console.log(key + " KEYBOARD COLOR");
-  if (oldColor === "green") {
+  if (oldColor === "#57E292") {
     return;
   }
-  if (oldColor === "yellow" && color !== "green") {
+  if (oldColor === "#FFD133" && color !== "#57E292") {
     return;
   }
   this.style.backgroundColor = color;
@@ -263,6 +265,7 @@ $(".close, .popup-overlay").on("click", function () {
 
 function endGame() {
   $(".endgame-overlay, .endgame-content").addClass("active");
+  $(".right-word").text(rightLetter);
   // $(".close, .endgame-overlay").on("click", function () {
   //   $(".endgame-overlay, .endgame-content").removeClass("active");
   // });

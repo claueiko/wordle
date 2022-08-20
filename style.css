@@ -8,9 +8,13 @@ html {
 }
 
 body {
-background: rgb(48,20,99);
-background: linear-gradient(90deg, rgb(19, 8, 40) 0%, rgb(37, 4, 87) 35%, rgba(2,13,44,1) 100%);
+
+background-color: rgb(13, 13, 13);  
+/* background: rgb(16, 7, 33);
+
+background: linear-gradient(90deg, rgb(19, 8, 40) 0%, rgb(11, 1, 25) 35%, rgba(2,13,44,1) 100%); */
 }
+
 
 .title {
      background: -webkit-linear-gradient(0deg, rgba(34,193,195,1) 0%, #fd2df6 100%);
@@ -97,12 +101,12 @@ input:focus {
   /*Hides pop-up when there is no "active" class*/
   visibility: hidden;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 25px;
+  right: 25px;
   background: #ffffff;
   border-radius: 10px;
-  width: 25%;
-  height: 50%;
+  padding: 60px 40px;
+ 
   left: 72%;
 }
 
@@ -110,17 +114,14 @@ input:focus {
   /*displays pop-up when "active" class is present*/
   visibility: visible;
   text-align:left;
-  height: 400px;
- 
 }
 
 .popup-content {
   /*Hides pop-up content when there is no "active" class */
   visibility: hidden;
   color: rgb(0, 0, 0);
-  padding: 20px 40px;
   line-height: 1.5;
-  
+
 }
 
 .popup-content.active {
@@ -227,11 +228,44 @@ input:focus {
     line-height: 90px;
     text-align: center;
 }
-.endgame-text {
+.wordle {
+  background: -webkit-linear-gradient(0deg, rgba(34,193,195,1) 0%, #fd2df6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+.green-word {
+  color: #57E292;
+  font-weight: 600;
+}
+.yellow-word {
+  color: #FFD133;
+  font-weight: 600;
+}
+.grey-word {
+  color: grey;
+  font-weight: 600;
+}
+.right-word {
+  text-align: center;
+  color: #57E292;
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: -20px;
+  margin-bottom: 10px;
+  
+}
+.subtitle  {
   font-size: 18px;
   text-align: center;
   margin-top: -55px;
 }
+.endgame-text {
+    font-size: 18px;
+  text-align: center;
+  margin-top: -15px;
+}
+
 .for-button{
   text-align: center;
 }
@@ -267,6 +301,19 @@ input:focus {
   font-size: 85px;
 }
 }
+
+#myVideo {
+  display: none;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
+
+
 @media (max-width: 1024px) {
   body {
     background: black;

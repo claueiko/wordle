@@ -11,17 +11,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800;900&display=swap" rel="stylesheet">
 </head>
 <body id="body">
-    
-<nav>
+    <video autoplay muted loop id="myVideo">
+  <source src="/images/Pexels Videos 2757709.mp4" type="video/mp4">
+</video>
+<main>
             <!--POP-UP-->
             <div class="popup-overlay">
             <!--Creates the popup content-->
              <div class="popup-content">
                  <h2>How to play</h2>
-                 <p> You have 6 tries to guess the WORDLE.<br>
-                    Each guess must be a valid 5-letter word.<br>
-                    You'll be using your keyboard. Hit the ENTER button to submit. <br>
+                 <p> You have 6 tries to guess the <span class="wordle">WORDLE</span>.<br><br>
+                    Each guess must be a valid 5-letter word.<br><br>
+                    You'll be using your keyboard. Hit the ENTER button to submit. <br><br>
                     After each guess, the color of the titles will change to show how close your guess was to the word.</p>
+                    If it turns <span class="green-word">green</span>, the letter is in the correct spot. <br>
+                    If it turns <span class="yellow-word">yellow</span>, the letter is in the word but in the wrong spot. <br>
+                    And if it turns <span class="grey-word">grey</span>, the letter is not in the word in any spot.
+                    </spot>
+
             <!--popup's close button-->
                 <button class="close">X</button> 
             </div>
@@ -36,7 +43,9 @@
             <!--Creates the popup content-->
                  <div class="endgame-content">
                      <h2 class="title-gameover">GAME OVER!</h2>
-                     <p class="endgame-text">Great job! <br>Feel like playing again?</p>
+                     <p class="subtitle">Great job! The correct word is:</p>
+                     <p class="right-word">  </p>
+                     <p class="endgame-text">Feel like playing again?</p>
                  
             <!--popup's close button-->
                     <div class="for-button">
@@ -61,7 +70,7 @@
 
 
     <h1 class="title">WORDLE</h1>
-</nav>
+       
 
 <div class="main">
     <div class="first-row row">
@@ -147,7 +156,7 @@
 </div>
 
 </div>
-
+ </main>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="app.js"></script>
