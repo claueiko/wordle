@@ -49,3 +49,9 @@ Working on the logic was quite straightforward but I struggled a little with onl
 Once I worked that out, I created popups to congratulate or not, the player.
 
 After that was done, I styled my css and jQuery to add better styles and animation effects.
+
+## Problem solving strategies:
+
+Using keyboard instead of buttons meant I needed to access the keyboard value in the body of the page and it was proving hard to move to the next div, so my instructor told me to use input fields instead, which I did.
+
+When adding animation to every matched letter (turning green), meant I had to put the div row in position relative, and that messed up with the pop up message (showing behind the game). That was fixed by adding z-index to 9999.

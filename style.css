@@ -22,7 +22,18 @@ background: linear-gradient(90deg, rgb(19, 8, 40) 0%, rgb(11, 1, 25) 35%, rgba(2
         -webkit-text-fill-color: transparent;
     font-size: 115px;
     margin-top: 20px;
+    animation: glow 1s ease-in-out;
 }
+@keyframes glow {
+    from {
+      text-shadow: 0 0 20px #392da9;
+    }
+    to {
+      text-shadow: 0 0 12px #802da9, 0 0 70px #af4dc7;
+    }
+  }
+
+
 
 .main {
     width: 600px;
@@ -32,6 +43,7 @@ background: linear-gradient(90deg, rgb(19, 8, 40) 0%, rgb(11, 1, 25) 35%, rgba(2
     margin-top: -90px;
     border-radius: 10px;
     padding: 20px;
+    
 }
 .row {
     display: flex;
@@ -41,6 +53,11 @@ background: linear-gradient(90deg, rgb(19, 8, 40) 0%, rgb(11, 1, 25) 35%, rgba(2
 input {
   /* cursor: none; */
   caret-color: transparent;
+  /* position: relative; */
+}
+.box {
+  border-radius: 7px;
+  position: relative;
 }
 input:focus {
     outline: none !important;
@@ -73,6 +90,7 @@ input:focus {
     text-align: center;
     text-transform: uppercase;
 }
+
 .keyboard{
     width: 600px;
     margin: 20px auto;
@@ -106,8 +124,8 @@ input:focus {
   background: #ffffff;
   border-radius: 10px;
   padding: 60px 40px;
- 
   left: 72%;
+  
 }
 
 .popup-overlay.active {
@@ -172,6 +190,7 @@ input:focus {
   background: #ffffff;
   border-radius: 10px;
   width: 50%;
+  z-index: 9999;
   
 }
 .lost-overlay {
@@ -183,6 +202,7 @@ input:focus {
   background: #ffffff;
   border-radius: 10px;
   width: 50%; 
+  z-index: 9999;
 }
 
 .endgame-overlay.active {
@@ -190,12 +210,14 @@ input:focus {
   visibility: visible;
   text-align:left;
   height: 400px;
+  
 }
 .lost-overlay.active {
   /*displays pop-up when "active" class is present*/
   visibility: visible;
   text-align:left;
   height: 400px;
+  
 }
 
 .endgame-content {
@@ -211,6 +233,7 @@ input:focus {
   color: rgb(0, 0, 0);
   padding: 20px 40px;
   line-height: 1.5;
+  
 }
 
 .endgame-content.active{
@@ -219,6 +242,7 @@ input:focus {
 }
 .lost-content.active{
   visibility: visible;
+  
 }
 .title-gameover{
    background: -webkit-linear-gradient(0deg, rgba(34,193,195,1) 0%, #fd2df6 100%);
@@ -312,7 +336,19 @@ input:focus {
   z-index: -1;
 }
 
-
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
 
 @media (max-width: 1024px) {
   body {

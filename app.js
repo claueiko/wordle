@@ -135,6 +135,7 @@ for (let i = 0; i < 5; i++) {
       color = "#57E292";
       console.log("green");
       
+      
     } else {
       color = "#FFD133";
       console.log("yellow");
@@ -145,6 +146,10 @@ for (let i = 0; i < 5; i++) {
    setTimeout(() => {
      //keyboard color
      border.style.backgroundColor = color;
+     
+     if (color === "#57E292") {
+     border.style.animation = "shake 0.5s 1" }
+     
      $("input").next("input").focus();
      keyboardColor(letter, color);
    }, delay);
@@ -155,6 +160,7 @@ for (let i = 0; i < 5; i++) {
     console.log("You got it!");
     setTimeout(function() {
       $("#myVideo").css("display", "block");}, 1900);
+
     remaining = 0;
     setTimeout(endGame, 1900);
    
@@ -266,6 +272,7 @@ $(".close, .popup-overlay").on("click", function () {
 function endGame() {
   $(".endgame-overlay, .endgame-content").addClass("active");
   $(".right-word").text(rightLetter);
+  
   // $(".close, .endgame-overlay").on("click", function () {
   //   $(".endgame-overlay, .endgame-content").removeClass("active");
   // });
