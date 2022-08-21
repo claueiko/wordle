@@ -8,14 +8,18 @@ html {
 }
 
 body {
-
 background-color: rgb(13, 13, 13);  
 /* background: rgb(16, 7, 33);
-
 background: linear-gradient(90deg, rgb(19, 8, 40) 0%, rgb(11, 1, 25) 35%, rgba(2,13,44,1) 100%); */
 }
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;}
 
-
+nav {
+  height: 180px;
+  display: inline;
+}
 .title {
      background: -webkit-linear-gradient(0deg, rgba(34,193,195,1) 0%, #fd2df6 100%);
         -webkit-background-clip: text;
@@ -23,6 +27,15 @@ background: linear-gradient(90deg, rgb(19, 8, 40) 0%, rgb(11, 1, 25) 35%, rgba(2
     font-size: 115px;
     margin-top: 20px;
     animation: glow 1s ease-in-out;
+}
+.desktop {
+  position: relative;
+  margin-top: -140px;
+  left: 192px;
+  color: rgb(203, 202, 202);
+  font-size: 18px;
+  
+
 }
 @keyframes glow {
     from {
@@ -32,15 +45,11 @@ background: linear-gradient(90deg, rgb(19, 8, 40) 0%, rgb(11, 1, 25) 35%, rgba(2
       text-shadow: 0 0 12px #802da9, 0 0 70px #af4dc7;
     }
   }
-
-
-
 .main {
     width: 600px;
     height: 680px;
     background-color: #66666620;
     margin: 0 auto;
-    margin-top: -90px;
     border-radius: 10px;
     padding: 20px;
     
@@ -350,14 +359,27 @@ input:focus {
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
-@media (max-width: 1024px) {
-  body {
-    background: black;
+
+/* 24 INCH SCREEN  */
+@media (max-width: 1920px) {
+ 
+  .main {
+    height: 500px;
+    width: 430px;
+    padding: 15px;
+  }
+  .row {
+    margin-bottom: 5px;
+  }
+  .letter{
+    height: 75px;
+    width: 75px;
+    font-size: 70px;
   }
 }
-
-@media (max-width: 768px) {
-  body {
-    background: white;
-  }
+/* 13 INCH MACBOOK PRO */
+@media (max-width: 1680px) {
+.title {
+  margin-top: -10px;
+};
 }
