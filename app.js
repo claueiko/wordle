@@ -321,9 +321,16 @@ $(".close, .popup-overlay").on("click", function () {
   $(".popup-overlay, .popup-content").removeClass("active");
 });
 
+
+
 function endGame() {
+  
   $(".endgame-overlay, .endgame-content").addClass("active");
   $(".right-word").text(rightLetter);
+  let winSound = new Audio("/sounds/win.wav");
+  winSound.play();
+  
+ 
   
   // $(".close, .endgame-overlay").on("click", function () {
   //   $(".endgame-overlay, .endgame-content").removeClass("active");
@@ -331,6 +338,8 @@ function endGame() {
 }
 function lostGame() {
   $(".endgame-overlay, .lost-content").addClass("active");
+  let loseSound = new Audio("/sounds/lose.wav");
+  loseSound.play();
 }
 
   // $(".endgame-overlay, .endgame-content").removeClass("active");
