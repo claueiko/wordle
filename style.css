@@ -156,7 +156,7 @@ input:focus {
   visibility: visible;
 }
 
-.open {
+.open , .mode {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -168,6 +168,12 @@ input:focus {
   background: #ffffff00;
   border: 1px solid #ffffff;
   padding: 10px;
+}
+.mode {
+  font-size: 20px;
+  right: 70px;
+  border-radius: 30px;
+  cursor: pointer;
 }
 
 .open:hover {
@@ -383,3 +389,5 @@ input:focus {
   margin-top: -10px;
 };
 }
+
+/* Not for mobile devices! */

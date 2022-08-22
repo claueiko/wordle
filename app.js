@@ -50,58 +50,112 @@ function movetoNext(current, nextFieldID) {
     document.getElementById(nextFieldID).focus();
   }
 }
+ let box = $("#1").text();
+ for (let i = 0; i <= 6; i++);
+ box = +1;
 
-  let box = $("#1").text();
-  for (let i = 0; i <= 6; i++);
-  box = +1;
-  
-  $(".row").keyup(function (event) {
+function startGame() {
+
+  $("input").keyup(function (event) {
     let pressedKey = String(event.key);
-  if (pressedKey === "Backspace") {
+    let letterOnly = pressedKey.match(/[a-z]/gi);
+    // let letterOnly = pressedKey.match(/[a-z]/gi);
+  if (pressedKey === "Backspace") { 
+    // currentTry.pop();
     deleteLetter();
     console.log("You hit backspace");
   } else if (
     pressedKey === "Enter") {
       console.log("Pressed Enter")
       check();
-    } else {
-     //letter only doesn't console.log other keys but is still adding to box!
-    //  let letterOnly = pressedKey.match(/[a-z]/gi)
-    //  if (!letterOnly) {
-    //   pressedKey = "";
-    //   //  $("#" + box).text("");
-    //   console.log("not a string");
-    //  } else {
+    } else if (!letterOnly) {
+      currentTry.pop();
+    }
+     else {
+    //  letter only doesn't console.log other keys but is still adding to box!
+     let letterOnly = pressedKey.match(/[a-z]/gi)
+     if (!letterOnly) {
+    
+      //  $("#" + box).text("");
+      console.log("not a string");
+      currentTry.pop(pressedKey);
+     } else {
       addLetters(pressedKey);
-     }}) ;
+     }}
+    }
+    )} ;
+  
+ startGame();
   
 function addLetters(pressedKey) {
-  let letterOnly = pressedKey.match(/[a-z]/gi)
+  // let letterOnly = pressedKey.match(/[a-z]/gi)
 
   if (nextLetter === 5) {
-    return }
-    else if (!letterOnly) {
-      pressedKey = "";
-    };
+    return };
+
+    // if (pressedKey === "Backspace") {
+    //   console.log("test");
+    //   currentTry.pop(pressedKey);
+      // nextLetter -=1;
+    
+    // else if (!letterOnly) {
+    //   console.log("not valid letter");
+      // pressedKey = "";
 
     pressedKey = pressedKey.toUpperCase();
-  
    $("#" + box).each(function () {
+
+    if(pressedKey === "Backspace") {
+      // nextLetter -= 1;
+      console.log("Line 109");
+    }
+
+    else {
+
+
    $(this).text(pressedKey);
+   
    //ADD CLASS FOR GREEN BOX (MATCHED)
    console.log(pressedKey);
    currentTry.push(pressedKey);
    nextLetter += 1;
    
- })};
+   }})}
+ ;
 
 
      
 // Delete letter if backspace is pressed not working
-function deleteLetter() {
-$(".letter").prev("input").focus();
-console.log("Got to function deleteLetter.");
-}
+function deleteLetter(pressedKey) {
+  // console.log($('input:focus').attr('id'));
+  let previous = $("input:focus").attr("id");
+  previous -= 1;
+   $("#" + previous).val("");
+  $("#" + previous).focus();
+  currentTry.pop(pressedKey);
+  console.log("function delete");
+  nextLetter -=1;
+ 
+ 
+  
+
+};
+  //  $(".box").each(function () {
+  //   $(this).prev().focus();
+  // console.log("Got to function deleteLetter.");
+  //  }); 
+
+  //  console.log($(this).text(""));
+  // for (let i = 0; i < 6; i--) {
+  //   $("#" + box[i]).focus();
+  // }
+  
+  // console.log(box);
+  // console.log($(this).attr("id"));
+// $("#1").focus();
+// console.log($("#1"));
+
+
 
 
 function check() {
@@ -112,11 +166,16 @@ function check() {
 for (let val of currentTry) {
   guessLetter+= val
 }
+//HERE FOR -5
+
 // if (guessLetter !=5) {
 //   console.log("NEED 5 LETTERS, YOU ENTERED " + guessLetter);
 //   // change above later to append text
-//   return
+//   return;
 // }
+
+// HERE END FOR -5
+
 if (!words.includes(guessLetter)) {
   console.log("NOT IN THE LIST");
   // change above to append text
@@ -134,8 +193,6 @@ for (let i = 0; i < 5; i++) {
     if (letter === rightGuess[i]){
       color = "#57E292";
       console.log("green");
-      
-      
     } else {
       color = "#FFD133";
       console.log("yellow");
@@ -153,7 +210,6 @@ for (let i = 0; i < 5; i++) {
      $("input").next("input").focus();
      keyboardColor(letter, color);
    }, delay);
-
   
 }
   if (guessLetter === rightLetter) {
@@ -175,6 +231,8 @@ for (let i = 0; i < 5; i++) {
       setTimeout(lostGame, 1900);
     }
   }
+    // $(".row").next("id").focus();
+
 }
 
 function keyboardColor(letter, color) {
@@ -183,7 +241,7 @@ function keyboardColor(letter, color) {
     key = $(this).text();
   if (key === letter) {
   let oldColor = this.style.backgroundColor;
-  console.log(key + " KEYBOARD COLOR");
+  console.log(key + color);
   if (oldColor === "#57E292") {
     return;
   }
@@ -196,12 +254,6 @@ function keyboardColor(letter, color) {
    });
     
 }
-
-
-    
-
-  
-
 
 
 // Function to move to next letter:
