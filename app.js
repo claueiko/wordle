@@ -87,7 +87,19 @@ function startGame() {
   } else if (
     pressedKey === "Enter") {
       console.log("Pressed Enter")
-      check();
+      // if ($(this).is("#5")) {
+        // console.log($(`input:focus`).attr("id"));
+        if (
+          $(this).attr("id") == "6" ||
+          $(this).attr("id") == "11" ||
+          $(this).attr("id") == "16" ||
+          $(this).attr("id") == "21" ||
+          $(this).attr("id") == "26" ||
+          $(this).attr("id") == "30"
+        ) {
+          check();
+        } return;
+      // check();
     } else if (!letterOnly) {
       currentTry.pop();
     } else {
