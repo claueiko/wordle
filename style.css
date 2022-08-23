@@ -5,16 +5,11 @@ html {
   height: 100%;
   color: #666666;
   text-align: center;
-}
-
-body {
-background-color: rgb(13, 13, 13);  
-}
-
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;}
-
+  background-color: rgb(13, 13, 13); 
+  max-width: 100%;
+  overflow-x: hidden;
+} 
+   
 nav {
   height: 180px;
   display: inline;
@@ -89,20 +84,6 @@ input:focus {
     text-transform: uppercase;
 }
 
-.green {
-    height: 100px;
-    width: 110px;
-    background-color: rgba(255, 255, 255, 0.009);
-    border-radius: 7px;
-    border: 1px solid white;
-    line-height: 100px;
-    font-size: 95px;
-    color: green;
-    font-weight: 500;
-    text-align: center;
-    text-transform: uppercase;
-}
-
 .keyboard{
     width: 600px;
     margin: 20px auto;
@@ -159,7 +140,7 @@ input:focus {
   visibility: visible;
 }
 
-.open , .mode {
+.open  {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -173,10 +154,18 @@ input:focus {
   padding: 10px;
 }
 
-.mode {
+.light {
+  position: absolute;
+  top: 10px;
+  float: right;
+  margin: 40px;
+  color: white;
+  background: #ffffff00;
   font-size: 20px;
   right: 70px;
   border-radius: 30px;
+  border: 1px solid #ffffff;
+  padding: 10px;
   cursor: pointer;
 }
 
@@ -362,6 +351,30 @@ input:focus {
   min-height: 100%;
   z-index: -1;
 }
+
+/* LIGHT MODE */
+html.light-mode {
+background-color: white;
+}
+.light.light-mode, .open.light-mode {
+  background-color: white;
+  color: black;
+  border-color: black;
+}
+.letter.light-mode {
+  border-color: rgb(187, 187, 187);
+  color: black;
+}
+.key.light-mode {
+  border-color: rgb(187, 187, 187);
+  color: black;
+}
+input:focus.light-mode {
+    outline: none !important;
+    border:1px solid white;
+    box-shadow: 0 0 7px #7762b6;
+  }
+
 
 /* 24 INCH SCREEN  */
 @media (max-width: 1920px) {

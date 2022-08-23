@@ -267,4 +267,15 @@ $(".restart-btn").on("click", function () {
     }, 100);
   });
   
-
+// SWITCH TO LIGHT MODE (TOGGLE)
+$(function() {
+  $(".light").click(function() {
+    $("html").toggleClass("light-mode");
+    $(".light").toggleClass("light-mode");
+    $(".open").toggleClass("light-mode");
+    $(".letter").toggleClass("light-mode");
+    $(".key").toggleClass("light-mode");
+    $("input.focus").toggleClass("light-mode");
+    $("#1").focus();
+  });
+});
