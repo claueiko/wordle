@@ -1,4 +1,6 @@
 
+// List of words to be guessed.
+
 const words = [
   'GREAT',
   'WORLD',
@@ -31,7 +33,21 @@ const words = [
   'BREAD',
   'JOINS',
   'TIMES',
-  'GAMES'
+  'GAMES',
+  'CRAMP',
+  'CRABS',
+  'CRAZY',
+  'ARISE',
+  'RULES',
+  'ROUTE',
+  'WHICH',
+  'ALIEN',
+  'IDEAS',
+  'POWER',
+  'TREND',
+  'STEAM',
+  'TIDES',
+  'HOVER'
 ]
 
 const tries = 6;
@@ -41,42 +57,43 @@ let nextLetter = 0;
 let rightLetter = words[Math.floor(Math.random() * words.length)]
 console.log(rightLetter)
 
+// Function to start game on first input field
 $(document).ready(function() {
     $("#1").focus();
 });
 
+// Function to move to the next field automatically when a letter is typed
 function movetoNext(current, nextFieldID) {
   if (current.value.length >= current.maxLength) {
     document.getElementById(nextFieldID).focus();
   }
 }
+
  let box = $("#1").text();
  for (let i = 0; i <= 6; i++);
  box = +1;
 
+ // Function to start the game
 function startGame() {
-
   $("input").keyup(function (event) {
     let pressedKey = String(event.key);
     let letterOnly = pressedKey.match(/[a-z]/gi);
-    // let letterOnly = pressedKey.match(/[a-z]/gi);
+
   if (pressedKey === "Backspace") { 
     // currentTry.pop();
     deleteLetter();
     console.log("You hit backspace");
+
   } else if (
     pressedKey === "Enter") {
       console.log("Pressed Enter")
       check();
     } else if (!letterOnly) {
       currentTry.pop();
-    }
-     else {
-    //  letter only doesn't console.log other keys but is still adding to box!
+    } else {
+    
      let letterOnly = pressedKey.match(/[a-z]/gi)
      if (!letterOnly) {
-    
-      //  $("#" + box).text("");
       console.log("not a string");
       currentTry.pop(pressedKey);
      } else {
@@ -87,45 +104,32 @@ function startGame() {
   
  startGame();
   
+
+ // Function to add Letters to the game
 function addLetters(pressedKey) {
-  // let letterOnly = pressedKey.match(/[a-z]/gi)
 
   if (nextLetter === 5) {
     return };
-
-    // if (pressedKey === "Backspace") {
-    //   console.log("test");
-    //   currentTry.pop(pressedKey);
-      // nextLetter -=1;
-    
-    // else if (!letterOnly) {
-    //   console.log("not valid letter");
-      // pressedKey = "";
 
     pressedKey = pressedKey.toUpperCase();
    $("#" + box).each(function () {
 
     if(pressedKey === "Backspace") {
-      // nextLetter -= 1;
+      
       console.log("Line 109");
-    }
-
-    else {
-
-
+    } else {
    $(this).text(pressedKey);
    
    //ADD CLASS FOR GREEN BOX (MATCHED)
    console.log(pressedKey);
    currentTry.push(pressedKey);
    nextLetter += 1;
-   
-   }})}
- ;
-
+   }
+  })
+};
 
      
-// Delete letter if backspace is pressed not working
+// Delete letter if backspace is pressed 
 function deleteLetter(pressedKey) {
   // console.log($('input:focus').attr('id'));
   let previous = $("input:focus").attr("id");
@@ -135,29 +139,9 @@ function deleteLetter(pressedKey) {
   currentTry.pop(pressedKey);
   console.log("function delete");
   nextLetter -=1;
- 
- 
-  
-
 };
-  //  $(".box").each(function () {
-  //   $(this).prev().focus();
-  // console.log("Got to function deleteLetter.");
-  //  }); 
 
-  //  console.log($(this).text(""));
-  // for (let i = 0; i < 6; i--) {
-  //   $("#" + box[i]).focus();
-  // }
-  
-  // console.log(box);
-  // console.log($(this).attr("id"));
-// $("#1").focus();
-// console.log($("#1"));
-
-
-
-
+// Function to check when Enter is clicked
 function check() {
   let row = $(".row")[6 - remaining];
   let guessLetter = "";
@@ -166,20 +150,12 @@ function check() {
 for (let val of currentTry) {
   guessLetter+= val
 }
-//HERE FOR -5
-
-// if (guessLetter !=5) {
-//   console.log("NEED 5 LETTERS, YOU ENTERED " + guessLetter);
-//   // change above later to append text
-//   return;
-// }
-
-// HERE END FOR -5
 
 if (!words.includes(guessLetter)) {
   console.log("NOT IN THE LIST");
   // change above to append text
 }
+
 for (let i = 0; i < 5; i++) {
   let color = "";
   let border = row.children[i];
@@ -231,10 +207,9 @@ for (let i = 0; i < 5; i++) {
       setTimeout(lostGame, 1900);
     }
   }
-    // $(".row").next("id").focus();
-
 }
 
+// function to change bottom keyboard colors
 function keyboardColor(letter, color) {
   let key = "";
    $(".key").each(function() {
@@ -256,60 +231,7 @@ function keyboardColor(letter, color) {
 }
 
 
-// Function to move to next letter:
-// function nextLetter() {
-//   for (let i = 0; i <= 6; i++);
-//   box =+ 1;
-//   addLetters();
-// }
 
-// THIS ONE BELOW IF WORKING BUT ABOVE IS PREFERRED!
-//     $("#body").keyup(function (event) {
-//       let pressedKey = String(event.key);
-//       pressedKey = pressedKey.toUpperCase();
-
-//       $("#1").each(function(){
-
-// CODES FOR BACKSPACE AND ENTER!
-
-//       console.log(pressedKey);
-//       if (pressedKey === "enter") {
-//         check();
-//       } else if (pressedKey === "BACKSPACE") {
-//         deleteLetter();
-//       } else {
-//         $("#1").text(pressedKey);
-//         nextLetter();
-//       };
-//     })
-// });
-
-// THIS DIDN'T WORK WITH APPEND
-// $("#body").keyup(function(event){
-//   let pressedKey = String(event.key);
-//   pressedKey = pressedKey.toUpperCase();
-//   $(".letter").each(function() {
-//     $(this).append("<p>" + pressedKey + "</p>");
-//   })
-// })
-
-
-
-//THIS WORKS WITH NUMBERS THEN LETTER
-// $("#body").keypress(function(event) {
-//     let keycode = (event.keyCode ? event.keyCode : event.which);
-//     if (keycode === a) {
-//      console.log("A");
-//      $("#1").text("A");
-//     }
-
-// });
-
-// //CODE TO DETECT WHICH KEY WAS PRESSED IN NUMBERS - NEED TO TRANSLATE
-// $("#body").keypress(function(event) {
-// let keycode = (event.keyCode ? event.keyCode : event.which);
-//     console.log(keycode);
-// });
 
 //appends an "active" class to .popup and .popup-content when the "Open" button is clicked
 $(".open").on("click", function () {
@@ -322,6 +244,7 @@ $(".close, .popup-overlay").on("click", function () {
 });
 
 
+// function for when player wins the game
 
 function endGame() {
   
@@ -329,34 +252,19 @@ function endGame() {
   $(".right-word").text(rightLetter);
   let winSound = new Audio("/sounds/win.wav");
   winSound.play();
-  
- 
-  
-  // $(".close, .endgame-overlay").on("click", function () {
-  //   $(".endgame-overlay, .endgame-content").removeClass("active");
-  // });
 }
+
+// function for when player loses the game after 6 tries
 function lostGame() {
   $(".endgame-overlay, .lost-content").addClass("active");
   let loseSound = new Audio("/sounds/lose.wav");
   loseSound.play();
 }
 
-  // $(".endgame-overlay, .endgame-content").removeClass("active");
-
-  $(".restart-btn").on("click", function () {
+$(".restart-btn").on("click", function () {
     setTimeout(function () {
       window.location.reload();
     }, 100);
-    // location.reload(true);
   });
-  // $("#restart-btn").click(function() {
-  //   location.reload(true);
-  // });
+  
 
-
-
-
-// $(".restart-btn, endgame-overlay")on("click", function() {
-//   $(".endgame-overlay, .endgame-content").addClass("active");
-// })
