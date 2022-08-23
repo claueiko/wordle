@@ -116,6 +116,7 @@ function startGame() {
   
  startGame();
   
+  
 
  // Function to add Letters to the game
 function addLetters(pressedKey) {
@@ -158,6 +159,7 @@ function check() {
   let row = $(".row")[6 - remaining];
   let guessLetter = "";
   let rightGuess = Array.from(rightLetter);
+ 
 
 for (let val of currentTry) {
   guessLetter+= val
@@ -173,20 +175,29 @@ for (let i = 0; i < 5; i++) {
   let border = row.children[i];
   let letter = currentTry[i];
   let position = rightGuess.indexOf(currentTry[i]);
+  
 
   if (position === -1) {
     color = "grey"
     console.log(color);
+    
+    
   } else {
     if (letter === rightGuess[i]){
-      color = "#57E292";
+      color = "#57E292";  
+      
+      
       console.log("green");
     } else {
       color = "#FFD133";
+     
       console.log("yellow");
     }
     rightGuess[position] = "#";
-  }
+    
+  }   
+  
+   
    let delay = 250 * i;
    setTimeout(() => {
      //keyboard color
@@ -198,15 +209,35 @@ for (let i = 0; i < 5; i++) {
      $("input").next("input").focus();
      keyboardColor(letter, color);
    }, delay);
-  
-}
+ }
+   
+ 
   if (guessLetter === rightLetter) {
     console.log("You got it!");
     setTimeout(function() {
       $("#myVideo").css("display", "block");}, 1900);
 
+      
+      //attempt to add points
+      let score = 100;
+       
+      if (remaining === 5) {
+        score -=20;
+      } else if (remaining === 4) {
+        score -=40;
+      } else if (remaining === 3) {
+        score -=60;
+      } else if (remaining === 2) {
+        score -=80;
+      } else if (remaining === 1) {
+        score -=90;
+      }
+    
+      console.log(score);
+      $(".show-score").text(score);
+
     remaining = 0;
-    setTimeout(endGame, 1900);
+    setTimeout(endGame, 2100);
    
     return;
   } else {
@@ -219,6 +250,7 @@ for (let i = 0; i < 5; i++) {
       setTimeout(lostGame, 1900);
     }
   }
+  
 }
 
 // function to change bottom keyboard colors

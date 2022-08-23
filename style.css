@@ -217,7 +217,7 @@ input:focus {
   /*displays pop-up when "active" class is present*/
   visibility: visible;
   text-align:left;
-  height: 400px;
+  height: 480px;
   
 }
 .lost-overlay.active {
@@ -288,14 +288,23 @@ input:focus {
   color: #57E292;
   font-size: 28px;
   font-weight: 700;
-  margin-top: -20px;
-  margin-bottom: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .subtitle  {
   font-size: 18px;
   text-align: center;
   margin-top: -55px;
+}
+.show-score {
+  color:#e73c7e;
+  font-weight: 600;
+  font-size: 20px;
+}
+.you-scored {
+  font-size: 18px;
+  text-align: center;
 }
 
 .endgame-text {
