@@ -147,7 +147,7 @@ input:focus {
   float: right;
   border-radius: 5px;
   margin: 40px;
-  font-size: 40px;
+  font-size: 20px;
   color: #ffffff;
   background: #ffffff00;
   border: 1px solid #ffffff;
@@ -163,7 +163,7 @@ input:focus {
   background: #ffffff00;
   font-size: 20px;
   right: 70px;
-  border-radius: 30px;
+  border-radius: 5px;
   border: 1px solid #ffffff;
   padding: 10px;
   cursor: pointer;
