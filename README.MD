@@ -18,9 +18,9 @@ No need to use buttons, just the keyboard;
 
 ## Technologies used:
 
-HTML
-CSS
-Javascript
+HTML;
+CSS;
+Javascript;
 jQuery
 
 
@@ -34,15 +34,15 @@ If the letter is correct and in the right position, the background color will tu
 
 If the letter is correct but not in the right position, the background will turn yellow on that row and at the bottom keyboard;
 
-If the letter is not part of the word, they'll turn grey.
+If the letter is not part of the word, they'll turn grey;
 
-The player will have 6 tries.
+The player will have 6 tries;
 
-When the player guesses the correct word, a popup message will come up saying "Congratulations".
+When the player guesses the correct word, a popup message will come up saying "Congratulations";
 
-If the player reaches all 6 attempts without guessing the word, a popup will show a "I'm sorry, you lost" message.
+If the player reaches all 6 attempts without guessing the word, a popup will show a "I'm sorry, you lost" message;
 
-Both popups will have a restart button that will reload the page and generate a new word.
+Both popups will have a restart button that will reload the page and generate a new word;
 
 Points:
 If the player guesses the word on:
