@@ -1,13 +1,12 @@
-<<<<<<< HEAD
-# WORDLE
 
-## Wireframe
-=======
 
 # WORDLE
+
+This is the first project I built while at General Assembly SEI London (remote). Wordle is a popular brain-teaser that I really enjoy and wanted to recreate. I changed the looks a little and added dark or light mode.
 
 ## Wireframe:
 ![image](https://media.git.generalassemb.ly/user/44792/files/bbbd430e-0a6d-4191-aed8-746f43955e70)
+
 
 ## User story:
 
@@ -16,6 +15,14 @@ No registration required;
 Game will load automatically and player can start typing answers straight away;
 
 No need to use buttons, just the keyboard;
+
+## Technologies used:
+
+HTML
+CSS
+Javascript
+jQuery
+
 
 ## How the game works:
 
@@ -35,7 +42,17 @@ When the player guesses the correct word, a popup message will come up saying "C
 
 If the player reaches all 6 attempts without guessing the word, a popup will show a "I'm sorry, you lost" message.
 
-Both popups will have a restar button that will reload the page and generate a new word.
+Both popups will have a restart button that will reload the page and generate a new word.
+
+Points:
+If the player guesses the word on:
+1st line: 100 points;
+2nd line: 80 points;
+3rd line: 60 points;
+4th line: 40 points;
+5th line: 20 points;
+6th line: 10 points;
+And no points if the player doesn't guess the word.
 
 
 ## Development process:
@@ -50,8 +67,20 @@ Once I worked that out, I created popups to congratulate or not, the player.
 
 After that was done, I styled my css and jQuery to add better styles and animation effects.
 
+
 ## Problem solving strategies:
 
 Using keyboard instead of buttons meant I needed to access the keyboard value in the body of the page and it was proving hard to move to the next div, so my instructor told me to use input fields instead, which I did.
 
 When adding animation to every matched letter (turning green), meant I had to put the div row in position relative, and that messed up with the pop up message (showing behind the game). That was fixed by adding z-index to 9999.
+
+
+## Unsolved problems:
+
+Can't change the keyboard color to green or yellow if letter is repeated. If the player types the same letter twice, the keyboard will turn grey even though the letter is part of the word.
+Also, will have to get back to it in the future and make it DRY, which is isn't now (haha).
+
+
+## Bottom line:
+
+After only 2 weeks of full time classes learning HTML, CSS and JS I am very proud of what I achieved. I know that in the future I'll look at my code and think "wow this could have been done with much fewer lines". But this is only my third week and I couldn't be happier with how my game works and looks.
