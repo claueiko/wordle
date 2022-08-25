@@ -294,14 +294,14 @@ function endGame() {
   
   $(".endgame-overlay, .endgame-content").addClass("active");
   $(".right-word").text(rightLetter);
-  let winSound = new Audio("/sounds/win.wav");
+  let winSound = new Audio("sounds/win.wav");
   winSound.play();
 }
 
 // function for when player loses the game after 6 tries
 function lostGame() {
   $(".endgame-overlay, .lost-content").addClass("active");
-  let loseSound = new Audio("/sounds/lose.wav");
+  let loseSound = new Audio("sounds/lose.wav");
   loseSound.play();
 }
 
