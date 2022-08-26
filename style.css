@@ -410,7 +410,7 @@ input:focus.light-mode {
 }
 
 /* MOBILE */
-@media (max-width: 390px) {
+@media (max-width: 428px) {
 
 .title {
   font-size: 60px;
