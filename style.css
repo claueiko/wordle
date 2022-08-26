@@ -409,6 +409,41 @@ input:focus.light-mode {
 };
 }
 
+/* MOBILE */
+@media (max-width: 390px) {
+
+.title {
+  font-size: 60px;
+  margin-top: 30px;
+}
+.desktop {
+  display: none;
+}
+.letter {
+    height: 50px;
+    width: 50px;
+    line-height: 40px;
+    font-size: 40px;
+    font-weight: 500;
+}
+.main {
+    height: 350px;
+    width: 300px;
+    padding: 15px;
+    margin-top: -40px;
+  }
+.keyboard {
+display: none;
+}
+.light {
+  display: none;
+}
+.open {
+  top: -20px;
+  right: -25px;
+}
+}
+
 /* Not for mobile devices! */
 /* KEYFRAMES FOR JQUERY GREEN LETTERS */
 @keyframes shake {
