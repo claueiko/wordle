@@ -2,7 +2,7 @@
 
 # WORDLE
 
-This is the first project I built while at General Assembly SEI London (remote). Wordle is a popular brain-teaser that I really enjoy and wanted to recreate. I changed the looks a little and added dark or light mode.
+This is the first project I built while at General Assembly SEI London (remote). Wordle is a popular brain-teaser that I really enjoy and wanted to recreate. I changed the looks a little and added dark or light mode. You can see it here: https://pages.git.generalassemb.ly/clauboden/project1/
 
 ## Wireframe:
 ![image](https://media.git.generalassemb.ly/user/44792/files/bbbd430e-0a6d-4191-aed8-746f43955e70)
@@ -84,3 +84,7 @@ Also, will have to get back to it in the future and make it DRY, which is isn't 
 ## Bottom line:
 
 After only 2 weeks of full time classes learning HTML, CSS and JS I am very proud of what I achieved. I know that in the future I'll look at my code and think "wow this could have been done with much fewer lines". But this is only my third week and I couldn't be happier with how my game works and looks.
+
+
+## Screenshot:
+![image](https://user-images.githubusercontent.com/93624439/192099895-3b958ac7-3333-4f84-97e8-43bfe7c67a65.png)
